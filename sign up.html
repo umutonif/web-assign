@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign Up </title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // JavaScript function for form validation
+        function validateForm() {
+            var firstName = document.forms["signupForm"]["firstname"].value;
+            var lastName = document.forms["signupForm"]["lastname"].value;
+            var dob = document.forms["signupForm"]["dateofbirth"].value;
+            var phoneNumber = document.forms["signupForm"]["phonenumber"].value;
+            var email = document.forms["signupForm"]["email"].value;
+            var location = document.forms["signupForm"]["location"].value;
+            var date = document.forms["signupForm"]["date"].value;
+            var semester = document.forms["signupForm"]["semester"].value;
+            var password = document.forms["signupForm"]["password"].value;
+            var confirmPassword = document.forms["signupForm"]["confirmpassword"].value;
+
+            if (firstName === "" || lastName === "" || dob === "" || phoneNumber === "" || email === "" || location === "" || date === "" || semester === "" || password === "" || confirmPassword === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Sign Up </h1>
+    <form name="signupForm" onsubmit="return validateForm()" method="post" action="login page.html">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required><br>
+
+        <label for="dateofbirth">Date of Birth:</label>
+        <input type="date" id="dateofbirth" name="dateofbirth" required><br>
+
+        <label for="phonenumber">Phone Number:</label>
+        <input type="tel" id="phonenumber" name="phonenumber" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="semester">Semester:</label>
+        <input type="text" id="semester" name="semester" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="confirmpassword">Confirm Password:</label>
+        <input type="password" id="confirmpassword" name="confirmpassword" required><br>
+
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+</html>

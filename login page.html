@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Login</h1>
+    
+    <div id="loginFormContainer">
+        <p>Don't have an account? <a href="sign up.html">Sign Up</a></p>
+        <p><a href="forget password.html" onclick="forgotPassword()">Forgot Password?</a></p>
+
+        <form id="loginForm">
+            <label>Email: </label>
+            <input type="email" id="emailInput" required="true">
+            <label>Password: </label>
+            <input type="password" id="passwordInput" required="true">
+            <button type="button" onclick="handleLogin()">LOGIN</button>
+        </form>
+    </div>
+
+    <script>
+        function handleLogin() {
+            // Get the email and password input values
+            var email = document.getElementById("emailInput").value;
+            var password = document.getElementById("passwordInput").value;
+
+            // You can implement your own logic to validate the credentials here.
+            // For example, check them against a database or hard-coded values.
+            if (email === "tuyishimewillyfrank@gmail.com" && password === "frankwilly1") {
+                // If the credentials are correct, redirect to the homepage
+                window.location.href = "homepage.html";
+            } else {
+                // If the credentials are incorrect, show an error message
+                alert("Invalid email or password. Please try again.");
+            }
+        }
+
+        function forgotPassword() {
+            // You can add your logic for handling forgotten passwords here.
+            // For example, you can show a reset password form or display a message.
+            alert("Forgot Password functionality goes here.");
+        }
+    </script>
+</body>
+</html>
